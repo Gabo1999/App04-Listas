@@ -35,16 +35,17 @@ struct BookDetailView: View {
                             .font(.title)
                     }
                     Spacer()
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            ForEach(book.authors, id: \.self) { g in
-                                Text(g)
-                                    .font(.title2)
-                                    .multilineTextAlignment(.center)
-                            }
-                            .padding()
+                    HStack {
+                        ForEach(book.authors, id: \.self) { g in
+                            Text(g)
+                                .font(.title2)
+                                .padding()
                         }
+                        //.padding()
                     }
+                    .padding(.horizontal)
+                    //.multilineTextAlignment(.center)
+                    //.frame(width: 260.0)
                     Spacer()
                     Text(book.publisher)
                         .font(.body)
@@ -57,7 +58,7 @@ struct BookDetailView: View {
                         .multilineTextAlignment(.center)
                         .frame(width: 300.0)
                 }
-                .padding(.horizontal, 20)
+                .padding(.horizontal, 65)
                 .navigationBarTitle(book.title, displayMode: .inline)
             }
         }
