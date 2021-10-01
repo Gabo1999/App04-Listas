@@ -11,6 +11,8 @@
 		87395C4C2706BA900051C890 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 87395C4B2706BA900051C890 /* SwiftyJSON */; };
 		87395C502706BABA0051C890 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 87395C4F2706BABA0051C890 /* Kingfisher */; };
 		87395C532706C0010051C890 /* GoogleAPILogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87395C522706C0010051C890 /* GoogleAPILogin.swift */; };
+		87395C562706CD7E0051C890 /* BookRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87395C552706CD7E0051C890 /* BookRowView.swift */; };
+		87395C592706D3300051C890 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87395C582706D3300051C890 /* BookDetailView.swift */; };
 		87403FC9270680F100DD313D /* App04_ListasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87403FC8270680F100DD313D /* App04_ListasApp.swift */; };
 		87403FCB270680F100DD313D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87403FCA270680F100DD313D /* ContentView.swift */; };
 		87403FCD270680F200DD313D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87403FCC270680F200DD313D /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		87395C522706C0010051C890 /* GoogleAPILogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAPILogin.swift; sourceTree = "<group>"; };
+		87395C552706CD7E0051C890 /* BookRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRowView.swift; sourceTree = "<group>"; };
+		87395C582706D3300051C890 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 		87403FC5270680F100DD313D /* App04-Listas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App04-Listas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87403FC8270680F100DD313D /* App04_ListasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App04_ListasApp.swift; sourceTree = "<group>"; };
 		87403FCA270680F100DD313D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 				87403FD1270680F200DD313D /* Info.plist */,
 				87403FCE270680F200DD313D /* Preview Content */,
 				87395C522706C0010051C890 /* GoogleAPILogin.swift */,
+				87395C552706CD7E0051C890 /* BookRowView.swift */,
+				87395C582706D3300051C890 /* BookDetailView.swift */,
 			);
 			path = "App04-Listas";
 			sourceTree = "<group>";
@@ -174,8 +180,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87395C592706D3300051C890 /* BookDetailView.swift in Sources */,
 				87403FCB270680F100DD313D /* ContentView.swift in Sources */,
 				87395C532706C0010051C890 /* GoogleAPILogin.swift in Sources */,
+				87395C562706CD7E0051C890 /* BookRowView.swift in Sources */,
 				87403FC9270680F100DD313D /* App04_ListasApp.swift in Sources */,
 				87403FE12706995900DD313D /* BookListViewModel.swift in Sources */,
 				87403FE4270699CF00DD313D /* Book.swift in Sources */,

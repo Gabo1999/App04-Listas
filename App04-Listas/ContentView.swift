@@ -16,7 +16,9 @@ struct ContentView: View {
                     SearchBar(text: $viewModel.searchTerm,
                               onSearchButtonClicked: viewModel.onSearchTapped)
                     List(viewModel.books, id: \.title) { book in
-                        Text(verbatim: book.title)
+                        NavigationLink(destination: BookDetailView(mediaModel: viewModel, book: book)) {
+                            BookRowView(book: book, width: 180.0)
+                        }
                     }
                 }
             }

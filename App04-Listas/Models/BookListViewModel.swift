@@ -17,7 +17,7 @@ final class BookListViewModel: ObservableObject {
     }
 
     func onSearchTapped() {
-        
+        self.books.removeAll()
         let replaced = searchTerm.replacingOccurrences(of: " ", with: "%20")
         let URL = "https://www.googleapis.com/books/v1/volumes?q=\(replaced)"
         
@@ -34,7 +34,8 @@ final class BookListViewModel: ObservableObject {
                 for a in b.1["volumeInfo"]["authors"] {
                     authors.append(a.1.stringValue)
                 }
-                book = Book(id: b.1["id"].stringValue, title: b.1["volumeInfo"]["title"].stringValue, subtitle: b.1["volumeInfo"]["subtitle"].stringValue, authors: authors, publisher: b.1["volumeInfo"]["publisher"].stringValue, description: b.1["volumeInfo"]["description"].stringValue, imageLink: b.1["volumeInfo"]["smallThumbnail"].stringValue)
+                let https = "https" + b.1["volumeInfo"]["imageLinks"]["smallThumbnail"].stringValue.dropFirst(4)
+                book = Book(id: b.1["id"].stringValue, title: b.1["volumeInfo"]["title"].stringValue, subtitle: b.1["volumeInfo"]["subtitle"].stringValue, authors: authors, publisher: b.1["volumeInfo"]["publisher"].stringValue, description: b.1["volumeInfo"]["description"].stringValue, imageLink: https)
                 self.books.append(book)
             }
         }
