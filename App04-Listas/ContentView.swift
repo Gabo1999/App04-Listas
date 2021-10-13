@@ -8,21 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var viewModel = BookListViewModel()
+    @State var maxAmount: String = "10"
+    @State var orderBy: String = "relevance"
+    @State var filter: String = ""
     var body: some View {
         NavigationView {
-            Group {
-               VStack {
-                    SearchBar(text: $viewModel.searchTerm,
-                              onSearchButtonClicked: viewModel.onSearchTapped)
-                    List(viewModel.books, id: \.title) { book in
-                        NavigationLink(destination: BookDetailView(mediaModel: viewModel, book: book)) {
-                            BookRowView(book: book, width: 180.0)
-                        }
+            TabView {
+                SearchView(maxAmount: $maxAmount, orderBy: $orderBy, filter: $filter)
+                    .tabItem {
+                        Label("Search", systemImage: "magnifyingglass")
                     }
-                }
+                SettingsView(maxAmount: $maxAmount, orderBy: $orderBy, filter: $filter)
+                    .tabItem {
+                        Label("Settings", systemImage: "gear")
+                    }
             }
-            .navigationBarTitle(Text("Books"))
+            .navigationBarTitle("Book API", displayMode: .inline)
         }
     }
 }
