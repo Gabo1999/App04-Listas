@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var maxAmount: String = "10"
-    @State var orderBy: String = "relevance"
-    @State var filter: String = ""
+    //@State var maxAmount: String = "10"
+    //@State var orderBy: String = "relevance"
+    //@State var filter: String = ""
+    @State var backgroundColor: Color = Color("Background")
+    @StateObject var viewModel = BookListViewModel()
+    
     var body: some View {
         NavigationView {
             TabView {
-                SearchView(maxAmount: $maxAmount, orderBy: $orderBy, filter: $filter)
+                SearchView(backgroundColor: $backgroundColor, viewModel: viewModel)
                     .tabItem {
                         Label("Search", systemImage: "magnifyingglass")
                     }
-                SettingsView(maxAmount: $maxAmount, orderBy: $orderBy, filter: $filter)
+                SettingsView(backgroundColor: $backgroundColor, viewModel: viewModel)
                     .tabItem {
                         Label("Settings", systemImage: "gear")
                     }

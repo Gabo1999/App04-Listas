@@ -12,6 +12,9 @@ import SwiftyJSON
 final class BookListViewModel: ObservableObject {
     @Published var books: [Book] = []
     var searchTerm: String = ""
+    @Published var maxAmount: String = "10"
+    @Published var filter: String = ""
+    @Published var orderBy: String = "relevance"
     init() {
         
     }
@@ -19,7 +22,7 @@ final class BookListViewModel: ObservableObject {
     func onSearchTapped() {
         self.books.removeAll()
         let replaced = searchTerm.replacingOccurrences(of: " ", with: "%20")
-        let URL = "https://www.googleapis.com/books/v1/volumes?q=\(replaced)"
+        let URL = "https://www.googleapis.com/books/v1/volumes?q=\(replaced)&\(filter != "" ? "filter=\(filter)" : "")&maxResults=\(maxAmount)&orderBy=\(orderBy)"
         
         AF.request(URL, method: .get, encoding: URLEncoding.default, headers: HTTPHeaders(headers)).responseData { data in
 

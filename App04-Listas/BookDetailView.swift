@@ -10,7 +10,7 @@ import Kingfisher
 
 struct BookDetailView: View {
     
-    @StateObject var mediaModel = BookListViewModel()
+    @ObservedObject var mediaModel = BookListViewModel()
     
     var book: Book
     
